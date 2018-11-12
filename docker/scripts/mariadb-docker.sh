@@ -72,7 +72,7 @@ SCRIPTROOT=${ENDPOINT}/$NODENUMBER
 echo "sudo docker start $INSTANCE" > ${SCRIPTROOT}/start.sh
 echo "sudo docker stop -t 60 $INSTANCE" > ${SCRIPTROOT}/stop.sh
 echo "sudo docker logs -f --tail 500 $INSTANCE"  > ${SCRIPTROOT}/logs.sh
-echo  "sudo docker exec $INSTANCE sh -c 'exec mysqldump --all-databases -uroot -p"$MYSQL_ROOT_PASSWORD"' > $ENDPOINT/services/drupal-dump-$DATE.sql" > ${SCRIPTROOT}/db-dump.sh
+echo  "sudo docker exec $INSTANCE sh -c 'exec mysqldump --all-databases -uroot -p"$MYSQL_ROOT_PASSWORD"' > /some/path/on/your/host/all-databases.sql" > ${SCRIPTROOT}/drupal-dump-$DATE.sql
 echo "sudo docker exec -it $INSTANCE bash"  > ${SCRIPTROOT}/bash.sh
 echo "sudo bash $SCRIPTROOT/drupal-docker.sh $SITE $NODENUMBER" > ${SCRIPTROOT}/rebuild.sh
 #echo 'sudo docker exec -it -u 0 '$INSTANCE' entermediadb-update-em9.sh $1 $2' > ${SCRIPTROOT}/update-em9.sh
