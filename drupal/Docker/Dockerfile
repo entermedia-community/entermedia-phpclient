@@ -1,11 +1,10 @@
 FROM centos:latest
-RUN yum install -y sudo yum-utils wget git mariadb-server unzip php-mbstring php-gd php-xml
+RUN yum install -y sudo yum-utils wget git unzip php-mbstring php-gd php-xml
 RUN yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 RUN yum install -y http://rpms.remirepo.net/enterprise/remi-release-7.rpm
 RUN yum-config-manager --enable remi-php71
 RUN yum install -y php php-mcrypt php-cli php-gd php-curl php-mysql php-ldap php-zip php-fileinfo
 RUN yum update -y
-RUN systemctl enable mariadb
 RUN echo "export PATH=~/.local/bin:$PATH" >> ~/.bashrc
 ENV LC_ALL en_US.UTF-8
 ENV LANG en_US.UTF-8
