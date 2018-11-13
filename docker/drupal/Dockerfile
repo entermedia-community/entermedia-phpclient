@@ -15,5 +15,5 @@ RUN mv /var/www/html/drupal-7.59/ /var/www/html/drupal
 RUN chown -R apache:apache /var/www/html/drupal
 RUN cp -p /var/www/html/drupal/sites/default/default.settings.php /var/www/html/drupal/sites/default/settings.php
 RUN echo "ServerName localhost" >> /etc/httpd/conf/httpd.conf
-ENTRYPOINT ["/usr/sbin/httpd", "FOREGROUND"]
+ENTRYPOINT ["/usr/sbin/httpd"]
 CMD /bin/bash
