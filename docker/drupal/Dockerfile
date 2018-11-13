@@ -14,4 +14,5 @@ RUN unzip -q drupal-7.59.zip -d /var/www/html/
 RUN mv /var/www/html/drupal-7.59/ /var/www/html/drupal
 RUN chown -R apache:apache /var/www/html/drupal
 RUN cp -p /var/www/html/drupal/sites/default/default.settings.php /var/www/html/drupal/sites/default/settings.php
+ENTRYPOINT ["/usr/sbin/httpd", "-D", "FOREGROUND"]
 CMD /bin/bash
