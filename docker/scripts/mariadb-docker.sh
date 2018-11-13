@@ -16,14 +16,17 @@ if [[ ! $(id -u) -eq 0 ]]; then
   exit 1
 fi
 
-if [ "$#" -ne 2 ]; then
-    echo "usage: sitename nodenumber"
+if [ "$#" -ne 5 ]; then
+    echo "usage: sitename nodenumber mysql_dbname mysql_user mysql_password"
     exit 1
 fi
 
 # Setup
 SITE=$1
 NODENUMBER=$2
+MYSQL_DB_NAME=$3
+MYSQL_USER=$4
+MYSQL_PASSWORD=$5
 DATE=`date '+%Y-%m-%d %H:%M:%S'`
 
 if [ ${#NODENUMBER} -ge 4 ]; then echo "Node Number must be between 100-250" ; exit
@@ -59,8 +62,6 @@ if [[ ! $(docker network ls | grep drupal-em) ]]; then
   docker network create --subnet 172.80.0.0/16 drupal-em
 fi
 
-# TODO: support upgrading, start, stop and removing
-
 # Initialize site root
 mkdir -p ${ENDPOINT}/{$NODENUMBER,services}
 chown entermedia. ${ENDPOINT}
@@ -72,9 +73,9 @@ SCRIPTROOT=${ENDPOINT}/$NODENUMBER
 echo "sudo docker start $INSTANCE" > ${SCRIPTROOT}/start.sh
 echo "sudo docker stop -t 60 $INSTANCE" > ${SCRIPTROOT}/stop.sh
 echo "sudo docker logs -f --tail 500 $INSTANCE"  > ${SCRIPTROOT}/logs.sh
-echo  "sudo docker exec $INSTANCE sh -c 'exec mysqldump --all-databases -uroot -p"$MYSQL_ROOT_PASSWORD"' > /some/path/on/your/host/all-databases.sql" > ${SCRIPTROOT}/drupal-dump-$DATE.sql
+echo "sudo docker exec $INSTANCE sh -c 'exec mysqldump --all-databases -uroot -p"$MYSQL_PASSWORD"' > $INSTANCE/services/all-databases.sql" > ${SCRIPTROOT}/drupal-dump-$DATE.sh
 echo "sudo docker exec -it $INSTANCE bash"  > ${SCRIPTROOT}/bash.sh
-echo "sudo bash $SCRIPTROOT/drupal-docker.sh $SITE $NODENUMBER" > ${SCRIPTROOT}/rebuild.sh
+echo "sudo bash $SCRIPTROOT/mariadb-docker.sh $SITE $NODENUMBER" > ${SCRIPTROOT}/rebuild.sh
 #echo 'sudo docker exec -it -u 0 '$INSTANCE' entermediadb-update-em9.sh $1 $2' > ${SCRIPTROOT}/update-em9.sh
 
 chmod +x $SCRIPTROOT/*
@@ -102,7 +103,6 @@ echo "https://en.wikipedia.org/wiki/List_of_tz_database_time_zones"
 echo "Default time zone(TZ) will be US Eastern time"
 
 set -e
-# Run Create Docker Instance, add Mounted HotFolders as needed
 docker run -t \
   --restart unless-stopped \
   --ip $IP_ADDR \
@@ -115,15 +115,11 @@ docker run -t \
 	-e GROUPID=$GROUPID \
 	-e CLIENT_NAME=$SITE \
 	-e INSTANCE_PORT=$NODENUMBER \
-  # -e MYSQL_USER=myuser \
-  # -e MYSQL_RANDOM_ROOT_PASSWORD=yes \
-  -e MYSQL_ROOT_PASSWORD=em2018un \
-  # -e MYSQL_DATABASE=databasename \
-  # -e MYSQL_ALLOW_EMPTY_PASSWORD=yes \
-
-
+  -e MYSQL_USER=$MYSQL_USER \
+  -e MYSQL_PASSWORD=$MYSQL_PASSWORD \
+  -e MYSQL_DATABASE=$MYSQL_DATABASE \
   -d mariadb
 
 echo ""
-echo "Node is running: curl http://$IP_ADDR:8080 in $SCRIPTROOT"
+echo "Node is running in $SCRIPTROOT"
 echo ""
