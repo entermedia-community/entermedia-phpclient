@@ -1,0 +1,6 @@
+{
+  "application_host": "http://em9.entermediadb.org",
+  "application_path": "openinstitute/mediadb",
+  "client_id": "admin",
+  "client_secret": "admin",
+}
