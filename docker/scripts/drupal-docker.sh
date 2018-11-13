@@ -75,6 +75,7 @@ echo "sudo docker exec -it $INSTANCE bash"  > ${SCRIPTROOT}/bash.sh
 echo "sudo bash $SCRIPTROOT/drupal-docker.sh $SITE $NODENUMBER" > ${SCRIPTROOT}/rebuild.sh
 #echo 'sudo docker exec -it -u 0 '$INSTANCE' entermediadb-update-em9.sh $1 $2' > ${SCRIPTROOT}/update-em9.sh
 
+cp  $0  ${SCRIPTROOT}/drupal-docker.sh 2>/dev/null
 chmod +x $SCRIPTROOT/*
 # Fix File Limits
 if grep -Fxq "entermedia" /etc/security/limits.conf
