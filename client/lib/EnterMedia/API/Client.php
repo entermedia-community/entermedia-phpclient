@@ -204,11 +204,10 @@ class Client {
    * @internal
    */
   public static function authorize($client_id, $client_secret) {
-    list($code, $response) = self::HTTPRequest('POST', '<endpoint>',
+    list($code, $response) = self::HTTPRequest('GET', 'http://em9.entermediadb.org/openinstitute/mediadb/services/authentication/login?id=admin&password=admin',
       ['Content-Type: application/x-www-form-urlencoded'],
-      'grant_type=client_credentials',
       function ($ch) use ($client_id, $client_secret) {
-        curl_setopt($ch, CURLOPT_USERPWD, "{$client_id}:{$client_secret}");
+        // curl_setopt($ch, CURLOPT_USERPWD, "{$client_id}:{$client_secret}");
       });
 
     if ($code !== 200) {
@@ -216,11 +215,11 @@ class Client {
     }
 
     $json = json_decode($response, TRUE);
-    if ($json['token_type'] !== 'Bearer') {
-      throw new AuthenticationException('Unsupported token type: ' . $json['token_type']);
-    }
+    // if ($json['token_type'] !== 'Bearer') {
+    //   throw new AuthenticationException('Unsupported token type: ' . $json['token_type']);
+    // }
 
-    return new Client($json['access_token'], $json['expires_in']);
+    return new Client($json['results']['entermediakey'], $json['results']['lastname']);
   }
 
   /**
