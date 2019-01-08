@@ -245,22 +245,13 @@ class Client {
    *
    * @internal
    */
-  public function request($method, $api_version, $api_type, $account, $endpoint, $result, $is_array = FALSE, ObjectInterface $post = NULL) {
-    $body = NULL;
-    if ($post) {
-      if ($method === 'PATCH') {
-        $body = $post->patchJSON();
-      } else {
-        $body = $post->postJSON();
-      }
-      $body = json_encode($body);
-    }
-
+  public function request($method, $api_version, $api_type, $account, $endpoint, $result, $is_array = FALSE, /* ObjectInterface */ $post = NULL) {
+    $body = $post;
     $total_requests = 0;
     do {
       list($code, $res) = self::HTTPRequest('POST',
-        "http://demo.entermediasoftware.com/mediadb/services/lists/search/endpoint",
-        ["Cookie: entermedia.key=$this->access_token", "Content-type: application/json"], $body);
+        "http://em9.entermediadb.org{$endpoint}",
+        ["Cookie: entermedia.key={$this->access_token}"], $body);
     }
     // Automatically request again, if we hit the rate limit. In between though
     // wait for 2 seconds, just to be 100% sure.
