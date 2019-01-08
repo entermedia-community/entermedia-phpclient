@@ -6,11 +6,12 @@ use EnterMedia\API\Client;
 use EnterMedia\API\CMS;
 use EnterMedia\API\Exception\AuthenticationException;
 use EnterMedia\Object\Asset\Asset;
+use PHPUnit\Framework\TestCase;
 
 /**
  * Base class for all test for the EnterMedia API wrapper.
  */
-class TestBase extends \PHPUnit_Framework_TestCase {
+class TestBase extends TestCase {
 
   /**
    * OAuth2 client id.

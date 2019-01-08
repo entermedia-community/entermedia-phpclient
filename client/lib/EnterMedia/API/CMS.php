@@ -16,9 +16,9 @@ class CMS extends API {
   }
 
   /**
-   * Lists video objects with the given restrictions.
+   * Lists asset objects with the given restrictions.
    *
-   * @return Video[]
+   * @return Asset[]
    */
   public function listAssets($search = NULL, $sort = NULL, $limit = NULL, $offset = NULL) {
     $query = '';
@@ -37,7 +37,7 @@ class CMS extends API {
     if (strlen($query) > 0) {
       $query = '?' . substr($query, 1);
     }
-    return $this->cmsRequest('GET', "/<endpoint>{$query}", Asset::class, TRUE);
+    return $this->cmsRequest('POST', "/<endpoint>{$query}", Asset::class, TRUE);
   }
 
   public function getAssetFields() {
@@ -47,7 +47,7 @@ class CMS extends API {
   /**
    * Gets the data for a single asset by issuing a GET request.
    *
-   * @return Video $video
+   * @return Asset $asset
    */
   public function getAsset($asset_id) {
     return $this->cmsRequest('GET', "/<endpoint>/{$asset_id}", Asset::class);

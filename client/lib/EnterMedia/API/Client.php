@@ -218,8 +218,7 @@ class Client {
     // if ($json['token_type'] !== 'Bearer') {
     //   throw new AuthenticationException('Unsupported token type: ' . $json['token_type']);
     // }
-
-    return new Client($json['results']['entermediakey'], $json['results']['lastname']);
+    return new Client($json['results']['entermediakey']);
   }
 
   /**
@@ -259,9 +258,9 @@ class Client {
 
     $total_requests = 0;
     do {
-      list($code, $res) = self::HTTPRequest($method,
-        "https://{$api_type}.api.entermedia.com/v{$api_version}/accounts/{$account}{$endpoint}",
-        ["Authorization: Bearer {$this->access_token}"], $body);
+      list($code, $res) = self::HTTPRequest('POST',
+        "http://demo.entermediasoftware.com/mediadb/services/lists/search/endpoint",
+        ["Cookie: entermedia.key=$this->access_token", "Content-type: application/json"], $body);
     }
     // Automatically request again, if we hit the rate limit. In between though
     // wait for 2 seconds, just to be 100% sure.
