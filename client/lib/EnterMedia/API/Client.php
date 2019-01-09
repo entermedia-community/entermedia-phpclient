@@ -266,13 +266,14 @@ class Client {
 
     $json = json_decode($res, TRUE);
 
+    // print_r($result);
     if (is_null($result)) {
       return $json;
     }
 
     if ($is_array) {
       $ret = [];
-      foreach ($json as $item) {
+      foreach ($json['results'] as $item) {
         $ret[] = call_user_func([$result, 'fromJSON'], $item);
       }
       return $ret;
