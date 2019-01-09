@@ -16,7 +16,8 @@ class Test extends TestBase {
   }
 
   public function testSearchAssets() {
-    $found_assets = $this->cms->listAssets();
+    $found_assets = $this->cms->listAssets('AWbQ9qkMjknzxKKGT2LP');
+    //print_r($found_assets);
     //$this->assertEquals(1, count($found_assets), "More than 1 asset found");
     $this->assertTrue((bool) $found_assets, "Results not found");
     //return $assets;
