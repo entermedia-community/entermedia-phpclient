@@ -57,7 +57,7 @@ class TestBase extends TestCase {
    * Currently it reads the command line arguments and sets up the client and the wrapper objects.
    */
   public function setUp() {
-    $json = file_get_contents("config.json");
+    $json = file_get_contents("test/config.json");
     if ($json) {
       $config = json_decode($json, TRUE);
       if (is_array($config)) {
