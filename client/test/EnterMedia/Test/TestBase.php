@@ -85,4 +85,20 @@ class TestBase extends TestCase {
     return new CMS($client, $this->account);
   }
 
+  /**
+   * Creates the filter for the search terms.
+   *
+   * @return $filter
+   * @throws AuthenticationException
+   */
+  protected function getFilters($value = '*', $field = 'id', $operator = 'matches') {
+    $filters = [];
+    $filters[] = [
+      'field' => $field,
+      'operator' => $operator,
+      'value' => $value,
+    ];
+    return $filters;
+  }
+
 }

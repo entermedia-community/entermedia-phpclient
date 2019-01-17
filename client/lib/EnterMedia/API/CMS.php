@@ -22,8 +22,20 @@ class CMS extends API {
    *
    * @return Asset[]
    */
-  public function listAssets($term_value = '*', $term_field = 'id', $term_operator = 'matches', $hitsperpage = '20') {
-    $post_data = '{"page": "1","hitsperpage": "' . $hitsperpage . '","query": {"terms": [{"field": "' . $term_field . '","operator": "' . $term_operator . '","value": "' . $term_value . '"}]}}';
+  public function listAssets($filters = [], $page = 1,  $number_of_items = 20) {
+
+    $body = [
+      'json' => [
+        'page' => (string) $page,
+        'hitsperpage' => (string) $number_of_items,
+        'showfilters' => "true",
+        'query' => [
+          'terms' => $filters,
+        ],
+      ],
+    ];
+
+    $post_data = json_encode($body['json']);
 
     return $this->cmsRequest('POST', "/openinstitute/mediadb/services/module/asset/search", Asset::class, TRUE, $post_data);
   }

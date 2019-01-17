@@ -5,7 +5,7 @@ namespace EnterMedia\Object\Asset;
 use EnterMedia\Object\ObjectBase;
 
 /**
- * Representation of all data related to a video object.
+ * Representation of all data related to an Asset object.
  *
  * @api
  */
@@ -22,7 +22,7 @@ class Asset extends ObjectBase {
    *
    * @var string
    */
-  protected $assetcreationdate;
+  protected $assetaddeddate;
   /**
    * Asset title - required field
    *
@@ -53,7 +53,7 @@ class Asset extends ObjectBase {
   public function applyJSON(array $json) {
     parent::applyJSON($json);
     $this->applyProperty($json, 'id');
-    $this->applyProperty($json, 'assetcreationdate');
+    $this->applyProperty($json, 'assetaddeddate');
     $this->applyProperty($json, 'name');
     $this->applyProperty($json, 'longcaption');
     $this->applyProperty($json, 'sourcepath');
@@ -80,17 +80,17 @@ class Asset extends ObjectBase {
   /**
    * @return string
    */
-  public function getAssetCreationDate() {
-    return $this->assetcreationdate;
+  public function getassetaddeddate() {
+    return $this->assetaddeddate;
   }
 
   /**
-   * @param string $assetcreationdate
+   * @param string $assetaddeddate
    * @return $this
    */
-  public function setAssetCreationDate($assetcreationdate) {
-    $this->assetcreationdate = $assetcreationdate;
-    $this->fieldChanged('assetcreationdate');
+  public function setassetaddeddate($assetaddeddate) {
+    $this->assetaddeddate = $assetaddeddate;
+    $this->fieldChanged('assetaddeddate');
     return $this;
   }
 

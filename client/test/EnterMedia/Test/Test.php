@@ -15,11 +15,32 @@ class Test extends TestBase {
     $this->assertTrue($client->isAuthorized(), 'Client is authorized');
   }
 
-  public function testSearchAssets() {
-    $found_assets = $this->cms->listAssets('AWbQ9qkMjknzxKKGT2LP');
-    //print_r($found_assets);
-    //$this->assertEquals(1, count($found_assets), "More than 1 asset found");
+  public function testSearchAssetsById() {
+    $filters = $this->getFilters('AWbQ9qkMjknzxKKGT2LP');
+    $found_assets = $this->cms->listAssets($filters);
+    print_r ($found_assets);
     $this->assertTrue((bool) $found_assets, "Results not found");
-    //return $assets;
   }
+
+  public function testSearchAssetsByName() {
+    $filters = $this->getFilters('night','name');
+    $found_assets = $this->cms->listAssets($filters);
+    print_r ($found_assets);
+    $this->assertTrue((bool) $found_assets, "Results not found");
+  }
+
+  public function testSearchAssetsByKeyword() {
+    $filters = $this->getFilters('bird','keywords');
+    $found_assets = $this->cms->listAssets($filters);
+    print_r ($found_assets);
+    $this->assertTrue((bool) $found_assets, "Results not found");
+  }
+
+  // public function testSearchAssetsByDate() {
+  //   $filters = $this->getFilters('2018-11-18','date');
+  //   $found_assets = $this->cms->listAssets($filters);
+  //   print_r ($found_assets);
+  //   $this->assertTrue((bool) $found_assets, "Results not found");
+  // }
+
 }
