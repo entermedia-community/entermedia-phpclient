@@ -43,7 +43,7 @@ ALREADY=$(docker ps -aq --filter name=$INSTANCE)
 
 IP_ADDR="172.80.0.$NODENUMBER"
 
-ENDPOINT=/media/emsites/$SITE
+ENDPOINT=/media/drupal/$SITE
 
 # Create entermedia user if needed
 if [[ ! $(id -u entermedia 2> /dev/null) ]]; then
@@ -118,7 +118,7 @@ docker run -t -d \
 	-v ${ENDPOINT}/services:/media/services \
 	-v ${ENDPOINT}/$NODENUMBER/tmp:/tmp \
 	entermediadb/entermedia-phpclient:$BRANCH \
-  /usr/bin/entermediadb-deploy.sh
+  /usr/bin/drupal-deploy.sh
 
 echo ""
 echo "Node is running: curl http://$IP_ADDR:8080 in $SCRIPTROOT"
