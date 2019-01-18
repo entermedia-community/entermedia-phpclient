@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/bin/bash
 
 if [[ ! `id -u` -eq 0 ]]; then
 	echo You must run this script as a superuser.
@@ -24,8 +24,8 @@ fi
 
 #Run command
 echo Starting Drupal ...
-
-while true
-do
-  echo "" > /dev/null 2>&1;
-done
+# 
+# while true
+# do
+#   echo "" > /dev/null 2>&1;
+# done

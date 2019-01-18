@@ -1,4 +1,4 @@
-FROM drupal:latest
+FROM drupal:7
 RUN apt update -y
 RUN apt install -qq -y sudo wget git unzip
 RUN apt update -y && apt upgrade -y && apt dist-upgrade -y
@@ -10,4 +10,4 @@ ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US.UTF-8
 ADD ./scripts/drupal-sshd.sh /usr/bin/drupal-sshd.sh
 ADD ./scripts/drupal-deploy.sh /usr/bin/drupal-deploy.sh
-CMD /bin/bash
+CMD apachectl -D FOREGROUND
