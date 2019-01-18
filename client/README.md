@@ -12,3 +12,4 @@ This library requires PHP 7.1 or newer with a CURL extension. You have to run `c
 
 ## Testing notes
 
+# Make sure to run `composer update`, then run `runTest.sh`.

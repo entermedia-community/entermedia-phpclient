@@ -6,11 +6,12 @@ use EnterMedia\API\Client;
 use EnterMedia\API\CMS;
 use EnterMedia\API\Exception\AuthenticationException;
 use EnterMedia\Object\Asset\Asset;
+use PHPUnit\Framework\TestCase;
 
 /**
  * Base class for all test for the EnterMedia API wrapper.
  */
-class TestBase extends \PHPUnit_Framework_TestCase {
+class TestBase extends TestCase {
 
   /**
    * OAuth2 client id.
@@ -56,7 +57,7 @@ class TestBase extends \PHPUnit_Framework_TestCase {
    * Currently it reads the command line arguments and sets up the client and the wrapper objects.
    */
   public function setUp() {
-    $json = file_get_contents("config.json");
+    $json = file_get_contents("test/config.json");
     if ($json) {
       $config = json_decode($json, TRUE);
       if (is_array($config)) {
@@ -82,6 +83,22 @@ class TestBase extends \PHPUnit_Framework_TestCase {
       $client = $this->getClient();
     }
     return new CMS($client, $this->account);
+  }
+
+  /**
+   * Creates the filter for the search terms.
+   *
+   * @return $filter
+   * @throws AuthenticationException
+   */
+  protected function getFilters($value = '*', $field = 'id', $operator = 'matches') {
+    $filters = [];
+    $filters[] = [
+      'field' => $field,
+      'operator' => $operator,
+      'value' => $value,
+    ];
+    return $filters;
   }
 
 }

@@ -204,11 +204,10 @@ class Client {
    * @internal
    */
   public static function authorize($client_id, $client_secret) {
-    list($code, $response) = self::HTTPRequest('POST', '<endpoint>',
+    list($code, $response) = self::HTTPRequest('GET', 'http://em9.entermediadb.org/openinstitute/mediadb/services/authentication/login?id=admin&password=admin',
       ['Content-Type: application/x-www-form-urlencoded'],
-      'grant_type=client_credentials',
       function ($ch) use ($client_id, $client_secret) {
-        curl_setopt($ch, CURLOPT_USERPWD, "{$client_id}:{$client_secret}");
+        // curl_setopt($ch, CURLOPT_USERPWD, "{$client_id}:{$client_secret}");
       });
 
     if ($code !== 200) {
@@ -216,11 +215,10 @@ class Client {
     }
 
     $json = json_decode($response, TRUE);
-    if ($json['token_type'] !== 'Bearer') {
-      throw new AuthenticationException('Unsupported token type: ' . $json['token_type']);
-    }
-
-    return new Client($json['access_token'], $json['expires_in']);
+    // if ($json['token_type'] !== 'Bearer') {
+    //   throw new AuthenticationException('Unsupported token type: ' . $json['token_type']);
+    // }
+    return new Client($json['results']['entermediakey']);
   }
 
   /**
@@ -247,22 +245,13 @@ class Client {
    *
    * @internal
    */
-  public function request($method, $api_version, $api_type, $account, $endpoint, $result, $is_array = FALSE, ObjectInterface $post = NULL) {
-    $body = NULL;
-    if ($post) {
-      if ($method === 'PATCH') {
-        $body = $post->patchJSON();
-      } else {
-        $body = $post->postJSON();
-      }
-      $body = json_encode($body);
-    }
-
+  public function request($method, $api_version, $api_type, $account, $endpoint, $result, $is_array = FALSE, /* ObjectInterface */ $post = NULL) {
+    $body = $post;
     $total_requests = 0;
     do {
-      list($code, $res) = self::HTTPRequest($method,
-        "https://{$api_type}.api.entermedia.com/v{$api_version}/accounts/{$account}{$endpoint}",
-        ["Authorization: Bearer {$this->access_token}"], $body);
+      list($code, $res) = self::HTTPRequest('POST',
+        "http://em9.entermediadb.org{$endpoint}",
+        ["Cookie: entermedia.key={$this->access_token}"], $body);
     }
     // Automatically request again, if we hit the rate limit. In between though
     // wait for 2 seconds, just to be 100% sure.
@@ -277,13 +266,14 @@ class Client {
 
     $json = json_decode($res, TRUE);
 
+    // print_r($result);
     if (is_null($result)) {
       return $json;
     }
 
     if ($is_array) {
       $ret = [];
-      foreach ($json as $item) {
+      foreach ($json['results'] as $item) {
         $ret[] = call_user_func([$result, 'fromJSON'], $item);
       }
       return $ret;
