@@ -4,10 +4,11 @@ RUN apt install -qq -y sudo wget git unzip
 RUN apt update -y && apt upgrade -y && apt dist-upgrade -y
 RUN curl -sS https://getcomposer.org/installer | php
 RUN mv composer.phar /usr/local/bin/composer && chmod +x /usr/local/bin/composer
+RUN a2enmod lbmethod_byrequests
 RUN echo "export PATH=~/.local/bin:$PATH" >> ~/.bashrc
 ENV LC_ALL en_US.UTF-8
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US.UTF-8
 ADD ./scripts/drupal-sshd.sh /usr/bin/drupal-sshd.sh
 ADD ./scripts/drupal-deploy.sh /usr/bin/drupal-deploy.sh
-ENTRYPOINT ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
+ENTRYPOINT ["/usr/sbin/apache2ctl", "-D FOREGROUND"]
