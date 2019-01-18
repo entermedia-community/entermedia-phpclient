@@ -24,8 +24,8 @@ fi
 
 #Run command
 echo Starting Drupal ...
-# 
-# while true
-# do
-#   echo "" > /dev/null 2>&1;
-# done
+
+while true
+do
+  tail -f /var/log/apache2/access.log
+done
