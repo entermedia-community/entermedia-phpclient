@@ -107,6 +107,7 @@ docker run -t -d \
 	--net drupal-em \
 	`#-p 22$NODENUMBER:22` \
 	--ip $IP_ADDR \
+  -p 8080:80 \
 	--name $INSTANCE \
 	--log-opt max-size=100m --log-opt max-file=2 \
 	--cap-add=SYS_PTRACE \
