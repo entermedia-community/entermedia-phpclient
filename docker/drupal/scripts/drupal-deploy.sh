@@ -24,3 +24,8 @@ fi
 
 #Run command
 echo Starting Drupal ...
+
+while true
+do
+  echo "" > /dev/null 2>&1;
+done
