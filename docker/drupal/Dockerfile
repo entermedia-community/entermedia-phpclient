@@ -9,6 +9,8 @@ RUN echo "export PATH=~/.local/bin:$PATH" >> ~/.bashrc
 ENV LC_ALL en_US.UTF-8
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US.UTF-8
+ADD ./scripts/drupal-sshd.sh /usr/bin/drupal-sshd.sh
+ADD ./scripts/drupal-deploy.sh /usr/bin/drupal-deploy.sh
 RUN wget http://ftp.drupal.org/files/projects/drupal-7.59.zip
 RUN unzip -q drupal-7.59.zip -d /var/www/html/
 RUN mv /var/www/html/drupal-7.59/ /var/www/html/drupal

@@ -105,6 +105,7 @@ set -e
 docker run -t -d \
 	--restart unless-stopped \
 	--net drupal-em \
+	`#-p 22$NODENUMBER:22` \
 	--ip $IP_ADDR \
 	--name $INSTANCE \
 	--log-opt max-size=100m --log-opt max-file=2 \
@@ -116,7 +117,8 @@ docker run -t -d \
 	-e INSTANCE_PORT=$NODENUMBER \
 	-v ${ENDPOINT}/services:/media/services \
 	-v ${ENDPOINT}/$NODENUMBER/tmp:/tmp \
-	entermediadb/entermedia-phpclient:$BRANCH
+	entermediadb/entermedia-phpclient:$BRANCH \
+  /usr/bin/entermediadb-deploy.sh
 
 echo ""
 echo "Node is running: curl http://$IP_ADDR:8080 in $SCRIPTROOT"
