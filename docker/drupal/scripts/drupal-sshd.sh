@@ -1,5 +1,5 @@
 #!/bin/bash -x
-HOME_CLIENT="/home/entermedia/"
+HOME_CLIENT="/home/entermedia"
 
 # Create client's home if doesn't exist
 if [ ! -d "$HOME_CLIENT" ]; then
