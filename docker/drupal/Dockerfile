@@ -10,4 +10,4 @@ ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US.UTF-8
 ADD ./scripts/drupal-sshd.sh /usr/bin/drupal-sshd.sh
 ADD ./scripts/drupal-deploy.sh /usr/bin/drupal-deploy.sh
-CMD apachectl -D FOREGROUND
+ENTRYPOINT ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
