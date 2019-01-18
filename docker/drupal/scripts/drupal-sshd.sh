@@ -2,7 +2,7 @@
 HOME_CLIENT="/home/entermedia"
 
 # Create client's home if doesn't exist
-if [ ! -d "$HOME_CLIENT" ]; then
+if [ ! -d "$HOME_CLIENT/.ssh" ]; then
 	# Install sshd
 	yum install -y openssh-server
 
