@@ -1,7 +1,8 @@
 {
- "application_host": "http://em9.entermediadb.org",
- "application_path": "openinstitute/mediadb",
+ "application_host": "https://em9dev.entermediadb.org",
+ "application_path": "assets/mediadb",
  "account": "Administrator",
  "client_id": "admin",
- "client_secret": "admin"
+ "client_secret": "admin",
+ "debugRequests": "log.log"
 }

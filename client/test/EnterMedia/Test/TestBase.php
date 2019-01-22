@@ -48,7 +48,8 @@ class TestBase extends TestCase {
    * @throws AuthenticationException
    */
   protected function getClient() {
-    return Client::authorize($this->client_id, $this->client_secret);
+    $application_url = $this->application_host.'/'.$this->application_path;
+    return Client::authorize($this->client_id, $this->client_secret, $application_url);
   }
 
   /**
