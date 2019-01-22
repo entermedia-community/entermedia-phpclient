@@ -7,10 +7,10 @@ Content-Type: application/x-www-form-urlencoded
 Content-Type: application/json
 
 ',
-  'request_body' => 
+  'request_body' =>
   Closure::__set_state(array(
   )),
-  'response' => 
+  'response' =>
   array (
     0 => 200,
     1 => '{
@@ -19,8 +19,8 @@ Content-Type: application/json
 		"status":"ok",
 		"user":"admin"
 	},
-	"results": 
-	{ 
+	"results":
+	{
 		"entermediakey": "adminmd5421c0af185908a6c0c40d50fd5e3f16760d5580bc",
 		"firstname": "The",
 		"lastname" : "Administrator",
@@ -38,7 +38,7 @@ Content-Length: 185
 Connection: keep-alive
 Location: https://em9dev.entermediadb.org/assets/mediadb/services/authentication/login?id=admin&password=admin
 
-HTTP/1.1 200 
+HTTP/1.1 200
 Server: nginx/1.10.0
 Date: Tue, 22 Jan 2019 00:58:08 GMT
 Content-Type: text/json;charset=UTF-8
@@ -60,10 +60,10 @@ Content-Type: application/x-www-form-urlencoded
 Content-Type: application/json
 
 ',
-  'request_body' => 
+  'request_body' =>
   Closure::__set_state(array(
   )),
-  'response' => 
+  'response' =>
   array (
     0 => 200,
     1 => '{
@@ -72,8 +72,8 @@ Content-Type: application/json
 		"status":"ok",
 		"user":"admin"
 	},
-	"results": 
-	{ 
+	"results":
+	{
 		"entermediakey": "adminmd5421c0af185908a6c0c40d50fd5e3f16760d5580bc",
 		"firstname": "The",
 		"lastname" : "Administrator",
@@ -91,7 +91,7 @@ Content-Length: 185
 Connection: keep-alive
 Location: https://em9dev.entermediadb.org/assets/mediadb/services/authentication/login?id=admin&password=admin
 
-HTTP/1.1 200 
+HTTP/1.1 200
 Server: nginx/1.10.0
 Date: Tue, 22 Jan 2019 00:58:09 GMT
 Content-Type: text/json;charset=UTF-8
@@ -113,10 +113,10 @@ Content-Type: application/x-www-form-urlencoded
 Content-Type: application/json
 
 ',
-  'request_body' => 
+  'request_body' =>
   Closure::__set_state(array(
   )),
-  'response' => 
+  'response' =>
   array (
     0 => 200,
     1 => '{
@@ -125,8 +125,8 @@ Content-Type: application/json
 		"status":"ok",
 		"user":"admin"
 	},
-	"results": 
-	{ 
+	"results":
+	{
 		"entermediakey": "adminmd5421c0af185908a6c0c40d50fd5e3f16760d5580bc",
 		"firstname": "The",
 		"lastname" : "Administrator",
@@ -144,7 +144,7 @@ Content-Length: 185
 Connection: keep-alive
 Location: https://em9dev.entermediadb.org/assets/mediadb/services/authentication/login?id=admin&password=admin
 
-HTTP/1.1 200 
+HTTP/1.1 200
 Server: nginx/1.10.0
 Date: Tue, 22 Jan 2019 00:58:10 GMT
 Content-Type: text/json;charset=UTF-8
@@ -167,7 +167,7 @@ Content-Type: application/json
 
 ',
   'request_body' => '{"page":"1","hitsperpage":"20","showfilters":"true","query":{"terms":[{"field":"id","operator":"matches","value":"AWZV77X0sH-lWt2VlIzE"}]}}',
-  'response' => 
+  'response' =>
   array (
     0 => 500,
     1 => '{ "reponse": {
@@ -182,7 +182,7 @@ Content-Length: 185
 Connection: keep-alive
 Location: https://em9dev.entermediadb.org/assets/mediadb/services/module/asset/search
 
-HTTP/1.1 500 
+HTTP/1.1 500
 Server: nginx/1.10.0
 Date: Tue, 22 Jan 2019 00:58:10 GMT
 Content-Type: text/json;charset=UTF-8
@@ -202,10 +202,10 @@ Accept: */*
 Content-Length: 0
 
 ',
-  'request_body' => 
+  'request_body' =>
   Closure::__set_state(array(
   )),
-  'response' => 
+  'response' =>
   array (
     0 => 200,
     1 => '{
@@ -214,8 +214,8 @@ Content-Length: 0
 		"status":"ok",
 		"user":"admin"
 	},
-	"results": 
-	{ 
+	"results":
+	{
 		"entermediakey": "adminmd5421c0af185908a6c0c40d50fd5e3f16760d5580bc",
 		"firstname": "The",
 		"lastname" : "Administrator",
@@ -225,7 +225,7 @@ Content-Length: 0
 }
 ',
   ),
-  'response_headers' => 'HTTP/1.1 200 
+  'response_headers' => 'HTTP/1.1 200
 Server: nginx/1.10.0
 Date: Tue, 22 Jan 2019 00:58:51 GMT
 Content-Type: text/json;charset=UTF-8
@@ -245,10 +245,10 @@ Accept: */*
 Content-Length: 0
 
 ',
-  'request_body' => 
+  'request_body' =>
   Closure::__set_state(array(
   )),
-  'response' => 
+  'response' =>
   array (
     0 => 200,
     1 => '{
@@ -257,8 +257,8 @@ Content-Length: 0
 		"status":"ok",
 		"user":"admin"
 	},
-	"results": 
-	{ 
+	"results":
+	{
 		"entermediakey": "adminmd5421c0af185908a6c0c40d50fd5e3f16760d5580bc",
 		"firstname": "The",
 		"lastname" : "Administrator",
@@ -268,7 +268,7 @@ Content-Length: 0
 }
 ',
   ),
-  'response_headers' => 'HTTP/1.1 200 
+  'response_headers' => 'HTTP/1.1 200
 Server: nginx/1.10.0
 Date: Tue, 22 Jan 2019 00:58:52 GMT
 Content-Type: text/json;charset=UTF-8
@@ -288,10 +288,10 @@ Accept: */*
 Content-Length: 0
 
 ',
-  'request_body' => 
+  'request_body' =>
   Closure::__set_state(array(
   )),
-  'response' => 
+  'response' =>
   array (
     0 => 200,
     1 => '{
@@ -300,8 +300,8 @@ Content-Length: 0
 		"status":"ok",
 		"user":"admin"
 	},
-	"results": 
-	{ 
+	"results":
+	{
 		"entermediakey": "adminmd5421c0af185908a6c0c40d50fd5e3f16760d5580bc",
 		"firstname": "The",
 		"lastname" : "Administrator",
@@ -311,7 +311,7 @@ Content-Length: 0
 }
 ',
   ),
-  'response_headers' => 'HTTP/1.1 200 
+  'response_headers' => 'HTTP/1.1 200
 Server: nginx/1.10.0
 Date: Tue, 22 Jan 2019 00:58:52 GMT
 Content-Type: text/json;charset=UTF-8
@@ -334,7 +334,7 @@ Content-Length: 139
 
 ',
   'request_body' => '{"page":"1","hitsperpage":"20","showfilters":"true","query":{"terms":[{"field":"id","operator":"matches","value":"AWZV77X0sH-lWt2VlIzE"}]}}',
-  'response' => 
+  'response' =>
   array (
     0 => 200,
     1 => '
@@ -344,7 +344,7 @@ Content-Length: 139
 		    "status":"ok",
 			"totalhits" : 1,
 			"searchtype" : "asset",
-			"hitsperpage": 20,			
+			"hitsperpage": 20,
 			"page": 1,
 			"pages": 1,
 			"hitsessionid": "hitsassetassets/catalog",
@@ -356,7 +356,7 @@ Content-Length: 139
 					 { "id":"id","operation": "matches"
 ,"value": "AWZV77X0sH-lWt2VlIzE"
 					 }
-				]	
+				]
 			}
 		},
 	"results":[
@@ -528,134 +528,134 @@ Content-Length: 139
 	"name": ""
 }
 ,"collectionid": "AWZV7iPYsH-lWt2VlIzB"
-			
-			
-			
-			
-			
-			
+
+
+
+
+
+
 			,"downloads":[
-		{	
+		{
 			"name": "Image Large"
-,	
+,
 			"id": "largeimage"
-,	
+,
 
 						"outputfile": ""
 ,
 			"url":"/assets/mediadb/services/module/asset/downloads/preset/Collections/admin/Work/blank-business-clean-891679.jpg/image1024x768.jpg",
 			"downloadurl":"/assets/mediadb/services/module/asset/downloads/generated/Collections/admin/Work/blank-business-clean-891679.jpg/image1024x768.jpg/blank-business-clean-891679L.jpg?includemetadata=true",
 			"iscomplete":"true"
-		
+
 		}
-		
-		
-, 		{	
+
+
+, 		{
 			"name": "Image Medium Small"
-,	
+,
 			"id": "mediumimagesmall"
-,	
+,
 
 						"outputfile": ""
 ,
 			"url":"/assets/mediadb/services/module/asset/downloads/preset/Collections/admin/Work/blank-business-clean-891679.jpg/image300x300.jpg",
 			"downloadurl":"/assets/mediadb/services/module/asset/downloads/generated/Collections/admin/Work/blank-business-clean-891679.jpg/image300x300.jpg/blank-business-clean-891679M.jpg?includemetadata=true",
 			"iscomplete":"false"
-		
+
 		}
-		
-		
-, 		{	
+
+
+, 		{
 			"name": "Image Medium"
-,	
+,
 			"id": "mediumimage"
-,	
+,
 
 						"outputfile": ""
 ,
 			"url":"/assets/mediadb/services/module/asset/downloads/preset/Collections/admin/Work/blank-business-clean-891679.jpg/image550x350.jpg",
 			"downloadurl":"/assets/mediadb/services/module/asset/downloads/generated/Collections/admin/Work/blank-business-clean-891679.jpg/image550x350.jpg/blank-business-clean-891679M.jpg?includemetadata=true",
 			"iscomplete":"true"
-		
+
 		}
-		
-		
-, 		{	
+
+
+, 		{
 			"name": "Image Thumbnail"
-,	
+,
 			"id": "thumbimage"
-,	
+,
 
 						"outputfile": ""
 ,
 			"url":"/assets/mediadb/services/module/asset/downloads/preset/Collections/admin/Work/blank-business-clean-891679.jpg/image200x200.jpg",
 			"downloadurl":"/assets/mediadb/services/module/asset/downloads/generated/Collections/admin/Work/blank-business-clean-891679.jpg/image200x200.jpg/blank-business-clean-891679S.jpg?includemetadata=true",
 			"iscomplete":"true"
-		
+
 		}
-		
-		
-, 		{	
+
+
+, 		{
 			"name": "Small Crop"
-,	
+,
 			"id": "imagecrop"
-,	
+,
 
 						"outputfile": ""
 ,
 			"url":"/assets/mediadb/services/module/asset/downloads/preset/Collections/admin/Work/blank-business-clean-891679.jpg/image110x62cropped.jpg",
 			"downloadurl":"/assets/mediadb/services/module/asset/downloads/generated/Collections/admin/Work/blank-business-clean-891679.jpg/image110x62cropped.jpg/blank-business-clean-891679110x62cropped.jpg?includemetadata=true",
 			"iscomplete":"true"
-		
+
 		}
-		
-		
-, 		{	
+
+
+, 		{
 			"name": "Widescreen Banner Crop"
-,	
+,
 			"id": "widesscreencrop"
-,	
+,
 
 						"outputfile": ""
 ,
 			"url":"/assets/mediadb/services/module/asset/downloads/preset/Collections/admin/Work/blank-business-clean-891679.jpg/image1920x500cropped.jpg",
 			"downloadurl":"/assets/mediadb/services/module/asset/downloads/generated/Collections/admin/Work/blank-business-clean-891679.jpg/image1920x500cropped.jpg/blank-business-clean-8916791920x500cropped.jpg?includemetadata=true",
 			"iscomplete":"false"
-		
+
 		}
-		
-		
-, 		{	
+
+
+, 		{
 			"name": "Image Large FPO"
-,	
+,
 			"id": "imagepreviewfpo"
-,	
+,
 
 						"outputfile": ""
 ,
 			"url":"/assets/mediadb/services/module/asset/downloads/preset/Collections/admin/Work/blank-business-clean-891679.jpg/image1024x768wm.jpg",
 			"downloadurl":"/assets/mediadb/services/module/asset/downloads/generated/Collections/admin/Work/blank-business-clean-891679.jpg/image1024x768wm.jpg/blank-business-clean-8916791024x768-fpo.jpg?includemetadata=true",
 			"iscomplete":"false"
-		
+
 		}
-		
-		
+
+
 		]
-			
-			
-			
-			
-			
-			
-			
-			
-			
+
+
+
+
+
+
+
+
+
 		}
-		]		
+		]
 }
 ',
   ),
-  'response_headers' => 'HTTP/1.1 200 
+  'response_headers' => 'HTTP/1.1 200
 Server: nginx/1.10.0
 Date: Tue, 22 Jan 2019 00:58:53 GMT
 Content-Type: text/json;charset=UTF-8
@@ -667,4 +667,3 @@ Access-Control-Allow-Origin: *
 
 ',
 )
-
