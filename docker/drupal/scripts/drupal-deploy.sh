@@ -14,9 +14,13 @@ if [ ! -f /media/services/startup.sh ]; then
 	chmod +x /media/services/startup.sh
 fi
 
+if [ ! -d /media/services/git ]; then
+	mkdir -p /media/services/git
+fi
+
 if [ ! -d /media/services/git/entermedia-phpclient ]; then
-	cd /media/services/ && git clone https://github.com/entermedia-community/entermedia-phpclient.git
-	cd /media/services/entermedia-phpclient/client/ && composer install
+	cd /media/services/git/ && git clone https://github.com/entermedia-community/entermedia-phpclient.git
+	cd /media/services/git/entermedia-phpclient/client/ && composer install
 fi
 
 cp /root/.bashrc /home/entermedia/ && chown entermedia. /home/entermedia/.bashrc
