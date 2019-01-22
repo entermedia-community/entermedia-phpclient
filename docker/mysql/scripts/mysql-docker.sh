@@ -52,6 +52,7 @@ chown entermedia. ${ENDPOINT}/services
 # Create custom scripts
 SCRIPTROOT=${ENDPOINT}
 echo "sudo docker exec -it  $INSTANCE bash"  > ${SCRIPTROOT}/bash.sh
+echo "sudo docker logs -f --tail 500 $INSTANCE"  > ${SCRIPTROOT}/logs.sh
 
 
 set -e
