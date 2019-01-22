@@ -62,7 +62,7 @@ docker run -t -d \
         --ip $IP_ADDR \
         --name $INSTANCE \
         -v $ENDPOINT/lib/mysql:/var/lib/mysql \
-        phpclient-mariadb:$BRANCH \
+        entermediadb/entermedia-phpclient-mariadb:$BRANCH \
         /usr/bin/mysql-deploy.sh $MYSQLUSER $MYSQLPASS
 
 
