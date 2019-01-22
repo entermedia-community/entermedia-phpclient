@@ -107,7 +107,7 @@ docker run -t -d \
 	--net drupal-em \
 	`#-p 22$NODENUMBER:22` \
 	--ip $IP_ADDR \
-  -p 8080:80 \
+  -p 80:80 \
 	--name $INSTANCE \
 	--log-opt max-size=100m --log-opt max-file=2 \
 	--cap-add=SYS_PTRACE \
@@ -122,5 +122,5 @@ docker run -t -d \
   /usr/bin/drupal-deploy.sh
 
 echo ""
-echo "Node is running: curl http://$IP_ADDR:8080 in $SCRIPTROOT"
+echo "Node is running: curl http://$IP_ADDR:80 in $SCRIPTROOT"
 echo ""
