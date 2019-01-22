@@ -8,12 +8,12 @@ fi
 EM_USER=$1
 PASSWORD=$2
 
-sed -i '$USER:'$EM_USER'' /var/lib/mysql/user.sql
-sed -i '$PASSWORD:'$PASSWORD'' /var/lib/mysql/user.sql
+sed -i "EMUSER:$EM_USER" /var/lib/mysql/user.sql
+sed -i "EMPASSWORD:$PASSWORD" /var/lib/mysql/user.sql
 
 #Run command
 echo Starting MySQL ...
-/sbin/my_init
+bash /sbin/my_init
 
 mysql -u root -psupersecret < /var/lib/mysql/user.sql
 # while true
