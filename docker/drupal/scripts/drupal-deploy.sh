@@ -14,6 +14,11 @@ if [ ! -f /media/services/startup.sh ]; then
 	chmod +x /media/services/startup.sh
 fi
 
+if [ ! -d /media/services/git/entermedia-phpclient ]; then
+	cd /media/services/ && git clone https://github.com/entermedia-community/entermedia-phpclient.git
+	cd /media/services/entermedia-phpclient/client/ && composer install
+fi
+
 cp /root/.bashrc /home/entermedia/ && chown entermedia. /home/entermedia/.bashrc
 
 # Execute arbitrary scripts if provided

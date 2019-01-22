@@ -5,8 +5,8 @@ RUN apt update -y && apt upgrade -y && apt dist-upgrade -y
 RUN curl -sS https://getcomposer.org/installer | php
 RUN mv composer.phar /usr/local/bin/composer && chmod +x /usr/local/bin/composer
 RUN a2enmod lbmethod_byrequests && service apache2 restart
-RUN mkdir -p /media/services/git && cd /media/services/git/ && git clone https://github.com/entermedia-community/entermedia-phpclient.git && ls -lRa /media/services/git/
 RUN echo "export PATH=~/.local/bin:$PATH" >> ~/.bashrc
+RUN cd /media/services/git/entermedia-phpclient/client && composer install
 ENV LC_ALL en_US.UTF-8
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US.UTF-8
