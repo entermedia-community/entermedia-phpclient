@@ -20,7 +20,7 @@ class Client {
    *
    * @var string
    */
-  public static $debugRequests = NULL;
+  public static $debugRequests = 'output.log';
 
   /**
    * Retries the request if EnterMedia rate limits the client.
@@ -46,6 +46,13 @@ class Client {
   protected $access_token;
 
   /**
+   * OAuth2 application_url.
+   *
+   * @var string
+   */
+  protected $application_url;
+
+  /**
    * Token expiration
    *
    * @var int
@@ -60,7 +67,8 @@ class Client {
    *
    * @internal
    */
-  public function __construct($access_token, $expires_in = 0) {
+  public function __construct($application_url, $access_token, $expires_in = 0) {
+    $this->application_url = $application_url;
     $this->access_token = $access_token;
     $this->expires_in = $expires_in;
   }
@@ -197,14 +205,16 @@ class Client {
    *   OAuth2 client ID.
    * @param string $client_secret
    *   OAuth2 client secret.
+   * @param endpoint $endpoint
+   *  OAuth2 URL
    * @return Client
    *   An authorized client.
    * @throws AuthenticationException
    *
    * @internal
    */
-  public static function authorize($client_id, $client_secret) {
-    list($code, $response) = self::HTTPRequest('GET', 'http://em9.entermediadb.org/openinstitute/mediadb/services/authentication/login?id=admin&password=admin',
+  public static function authorize($client_id, $client_secret, $application_url) {
+    list($code, $response) = self::HTTPRequest('GET', $application_url.'/services/authentication/login?id='.$client_id.'&password='.$client_secret,
       ['Content-Type: application/x-www-form-urlencoded'],
       function ($ch) use ($client_id, $client_secret) {
         // curl_setopt($ch, CURLOPT_USERPWD, "{$client_id}:{$client_secret}");
@@ -218,7 +228,7 @@ class Client {
     // if ($json['token_type'] !== 'Bearer') {
     //   throw new AuthenticationException('Unsupported token type: ' . $json['token_type']);
     // }
-    return new Client($json['results']['entermediakey']);
+    return new Client($application_url, $json['results']['entermediakey']);
   }
 
   /**
@@ -248,9 +258,10 @@ class Client {
   public function request($method, $api_version, $api_type, $account, $endpoint, $result, $is_array = FALSE, /* ObjectInterface */ $post = NULL) {
     $body = $post;
     $total_requests = 0;
+
     do {
       list($code, $res) = self::HTTPRequest('POST',
-        "http://em9.entermediadb.org{$endpoint}",
+        $this->application_url.$endpoint,
         ["Cookie: entermedia.key={$this->access_token}"], $body);
     }
     // Automatically request again, if we hit the rate limit. In between though

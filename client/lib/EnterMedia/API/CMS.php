@@ -37,11 +37,11 @@ class CMS extends API {
 
     $post_data = json_encode($body['json']);
 
-    return $this->cmsRequest('POST', "/openinstitute/mediadb/services/module/asset/search", Asset::class, TRUE, $post_data);
+    return $this->cmsRequest('POST', "/services/module/asset/search", Asset::class, TRUE, $post_data);
   }
 
   public function getAssetFields() {
-    return $this->cmsRequest('GET', "/openinstitute/mediadb/services/module/asset/search", CustomFields::class, FALSE);
+    return $this->cmsRequest('GET', "/services/module/asset/search", CustomFields::class, FALSE);
   }
 
   /**

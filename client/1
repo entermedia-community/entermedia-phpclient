@@ -1,0 +1,250 @@
+array (
+  'request' => 'GET /assets/mediadb/services/authentication/login?id=admin&password=admin HTTP/1.1
+Host: em9dev.entermediadb.org
+Accept: */*
+Referer: http://em9dev.entermediadb.org/assets/mediadb/services/authentication/login?id=admin&password=admin
+Content-Type: application/x-www-form-urlencoded
+Content-Type: application/json
+
+',
+  'request_body' => 
+  Closure::__set_state(array(
+  )),
+  'response' => 
+  array (
+    0 => 200,
+    1 => '{
+	"response":
+	{
+		"status":"ok",
+		"user":"admin"
+	},
+	"results": 
+	{ 
+		"entermediakey": "adminmd5421c0af185908a6c0c40d50fd5e3f16760d5580bc",
+		"firstname": "The",
+		"lastname" : "Administrator",
+		"email" : "cburkey@openedit.org",
+		"screenname" : "admin"
+	}
+}
+',
+  ),
+  'response_headers' => 'HTTP/1.1 301 Moved Permanently
+Server: nginx/1.10.0
+Date: Tue, 22 Jan 2019 00:55:48 GMT
+Content-Type: text/html
+Content-Length: 185
+Connection: keep-alive
+Location: https://em9dev.entermediadb.org/assets/mediadb/services/authentication/login?id=admin&password=admin
+
+HTTP/1.1 200 
+Server: nginx/1.10.0
+Date: Tue, 22 Jan 2019 00:55:49 GMT
+Content-Type: text/json;charset=UTF-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Cache-Control: proxy-revalidate
+Set-Cookie: JSESSIONID=E460C3225B87FDC7FF846F686562572D; Path=/; HttpOnly
+Access-Control-Allow-Origin: *
+
+',
+)
+
+array (
+  'request' => 'GET /assets/mediadb/services/authentication/login?id=admin&password=admin HTTP/1.1
+Host: em9dev.entermediadb.org
+Accept: */*
+Referer: http://em9dev.entermediadb.org/assets/mediadb/services/authentication/login?id=admin&password=admin
+Content-Type: application/x-www-form-urlencoded
+Content-Type: application/json
+
+',
+  'request_body' => 
+  Closure::__set_state(array(
+  )),
+  'response' => 
+  array (
+    0 => 200,
+    1 => '{
+	"response":
+	{
+		"status":"ok",
+		"user":"admin"
+	},
+	"results": 
+	{ 
+		"entermediakey": "adminmd5421c0af185908a6c0c40d50fd5e3f16760d5580bc",
+		"firstname": "The",
+		"lastname" : "Administrator",
+		"email" : "cburkey@openedit.org",
+		"screenname" : "admin"
+	}
+}
+',
+  ),
+  'response_headers' => 'HTTP/1.1 301 Moved Permanently
+Server: nginx/1.10.0
+Date: Tue, 22 Jan 2019 00:55:49 GMT
+Content-Type: text/html
+Content-Length: 185
+Connection: keep-alive
+Location: https://em9dev.entermediadb.org/assets/mediadb/services/authentication/login?id=admin&password=admin
+
+HTTP/1.1 200 
+Server: nginx/1.10.0
+Date: Tue, 22 Jan 2019 00:55:50 GMT
+Content-Type: text/json;charset=UTF-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Cache-Control: proxy-revalidate
+Set-Cookie: JSESSIONID=E7A5BA96D4E67D1DD83EBEBF79AC5A52; Path=/; HttpOnly
+Access-Control-Allow-Origin: *
+
+',
+)
+
+array (
+  'request' => 'GET /assets/mediadb/services/authentication/login?id=admin&password=admin HTTP/1.1
+Host: em9dev.entermediadb.org
+Accept: */*
+Referer: http://em9dev.entermediadb.org/assets/mediadb/services/authentication/login?id=admin&password=admin
+Content-Type: application/x-www-form-urlencoded
+Content-Type: application/json
+
+',
+  'request_body' => 
+  Closure::__set_state(array(
+  )),
+  'response' => 
+  array (
+    0 => 200,
+    1 => '{
+	"response":
+	{
+		"status":"ok",
+		"user":"admin"
+	},
+	"results": 
+	{ 
+		"entermediakey": "adminmd5421c0af185908a6c0c40d50fd5e3f16760d5580bc",
+		"firstname": "The",
+		"lastname" : "Administrator",
+		"email" : "cburkey@openedit.org",
+		"screenname" : "admin"
+	}
+}
+',
+  ),
+  'response_headers' => 'HTTP/1.1 301 Moved Permanently
+Server: nginx/1.10.0
+Date: Tue, 22 Jan 2019 00:55:50 GMT
+Content-Type: text/html
+Content-Length: 185
+Connection: keep-alive
+Location: https://em9dev.entermediadb.org/assets/mediadb/services/authentication/login?id=admin&password=admin
+
+HTTP/1.1 200 
+Server: nginx/1.10.0
+Date: Tue, 22 Jan 2019 00:55:50 GMT
+Content-Type: text/json;charset=UTF-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Cache-Control: proxy-revalidate
+Set-Cookie: JSESSIONID=B471C1548EF9FE904AE27BBC478F51C8; Path=/; HttpOnly
+Access-Control-Allow-Origin: *
+
+',
+)
+
+array (
+  'request' => 'GET /assets/mediadb/services/authentication/login?id=admin&password=admin HTTP/1.1
+Host: em9dev.entermediadb.org
+Accept: */*
+Referer: http://em9dev.entermediadb.org/assets/mediadb/services/authentication/login?id=admin&password=admin
+Content-Type: application/x-www-form-urlencoded
+Content-Type: application/json
+
+',
+  'request_body' => 
+  Closure::__set_state(array(
+  )),
+  'response' => 
+  array (
+    0 => 200,
+    1 => '{
+	"response":
+	{
+		"status":"ok",
+		"user":"admin"
+	},
+	"results": 
+	{ 
+		"entermediakey": "adminmd5421c0af185908a6c0c40d50fd5e3f16760d5580bc",
+		"firstname": "The",
+		"lastname" : "Administrator",
+		"email" : "cburkey@openedit.org",
+		"screenname" : "admin"
+	}
+}
+',
+  ),
+  'response_headers' => 'HTTP/1.1 301 Moved Permanently
+Server: nginx/1.10.0
+Date: Tue, 22 Jan 2019 00:55:51 GMT
+Content-Type: text/html
+Content-Length: 185
+Connection: keep-alive
+Location: https://em9dev.entermediadb.org/assets/mediadb/services/authentication/login?id=admin&password=admin
+
+HTTP/1.1 200 
+Server: nginx/1.10.0
+Date: Tue, 22 Jan 2019 00:55:51 GMT
+Content-Type: text/json;charset=UTF-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Cache-Control: proxy-revalidate
+Set-Cookie: JSESSIONID=166DD5867F11A8D86B1D54A9EE5B0F6F; Path=/; HttpOnly
+Access-Control-Allow-Origin: *
+
+',
+)
+
+array (
+  'request' => 'POST /assets/mediadb/services/module/asset/search HTTP/1.1
+Host: em9dev.entermediadb.org
+Accept: */*
+Referer: http://em9dev.entermediadb.org/assets/mediadb/services/module/asset/search
+Cookie: entermedia.key=adminmd5421c0af185908a6c0c40d50fd5e3f16760d5580bc
+Content-Type: application/json
+
+',
+  'request_body' => '{"page":"1","hitsperpage":"20","showfilters":"true","query":{"terms":[{"field":"id","operator":"matches","value":"AWZV77X0sH-lWt2VlIzE"}]}}',
+  'response' => 
+  array (
+    0 => 500,
+    1 => '{ "reponse": {
+ "status":"error",{ "path":"/WEB-INF/base/mediadb/services/module/default/search.xconf#JsonDataModule.handleSearch java.lang.NullPointerException",{ "details":"org.openedit.OpenEditException: /WEB-INF/base/mediadb/services/module/default/search.xconf#JsonDataModule.handleSearch java.lang.NullPointerException null"
+}',
+  ),
+  'response_headers' => 'HTTP/1.1 301 Moved Permanently
+Server: nginx/1.10.0
+Date: Tue, 22 Jan 2019 00:55:51 GMT
+Content-Type: text/html
+Content-Length: 185
+Connection: keep-alive
+Location: https://em9dev.entermediadb.org/assets/mediadb/services/module/asset/search
+
+HTTP/1.1 500 
+Server: nginx/1.10.0
+Date: Tue, 22 Jan 2019 00:55:52 GMT
+Content-Type: text/json;charset=UTF-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Cache-Control: proxy-revalidate
+Set-Cookie: JSESSIONID=2A7FC0B92C87A7CB2C90B830A45A8AB4; Path=/; HttpOnly
+Access-Control-Allow-Origin: *
+
+',
+)
+
