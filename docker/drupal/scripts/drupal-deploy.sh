@@ -17,13 +17,13 @@ fi
 
 if [ ! -d /media/services/git ]; then
 	mkdir -p /media/services/git
+	chown entermedia. /media/services/git
 fi
 
+chown -R entermedia. /tmp/
+
 if [ ! -d /media/services/git/entermedia-phpclient ]; then
-	cd /media/services/git/ && git clone https://github.com/entermedia-community/entermedia-phpclient.git
-	chown entermedia. -R /media/services/git
-	echo "Git cloned:"
-	ls -lRa /media/services/git/
+	runuser -l entermedia -c "cd /media/services/git/ && git clone https://github.com/entermedia-community/entermedia-phpclient.git"
 	runuser -l entermedia -c 'cd /media/services/git/entermedia-phpclient/client/ && composer install'
 fi
 
