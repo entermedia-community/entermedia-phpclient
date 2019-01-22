@@ -7,6 +7,7 @@ fi
 if [[ ! `id -u entermedia 2> /dev/null` ]]; then
 	groupadd -g $GROUPID entermedia
 	useradd -ms /bin/bash entermedia -g entermedia -u $USERID
+	usermod -aG sudo entermedia
 fi
 
 if [ ! -f /media/services/startup.sh ]; then
@@ -20,10 +21,14 @@ fi
 
 if [ ! -d /media/services/git/entermedia-phpclient ]; then
 	cd /media/services/git/ && git clone https://github.com/entermedia-community/entermedia-phpclient.git
-	cd /media/services/git/entermedia-phpclient/client/ && composer install
+	chown entermedia. -R /media/services/git
+	echo "Git cloned:"
+	ls -lRa /media/services/git/
+	runuser -l entermedia -c 'cd /media/services/git/entermedia-phpclient/client/ && composer install'
 fi
 
 cp /root/.bashrc /home/entermedia/ && chown entermedia. /home/entermedia/.bashrc
+runuser -l entermedia -c 'source .bashrc'
 
 # Execute arbitrary scripts if provided
 if [[ -d /media/services ]]; then

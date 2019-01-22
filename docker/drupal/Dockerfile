@@ -7,6 +7,7 @@ RUN mv composer.phar /usr/local/bin/composer && chmod +x /usr/local/bin/composer
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 RUN a2enmod lbmethod_byrequests && service apache2 restart
 RUN echo "export PATH=~/.local/bin:$PATH" >> ~/.bashrc
+RUN echo 'entermedia ALL=(ALL) NOPASSWD: ALL' | sudo EDITOR='tee -a' visudo
 ENV LC_ALL en_US.UTF-8
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US.UTF-8
