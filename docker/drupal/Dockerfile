@@ -5,10 +5,12 @@ RUN apt update -y && apt upgrade -y && apt dist-upgrade -y
 RUN curl -sS https://getcomposer.org/installer | php
 RUN mv composer.phar /usr/local/bin/composer && chmod +x /usr/local/bin/composer
 RUN a2enmod lbmethod_byrequests
+RUN mkdir -p /media/services/git && cd /media/services/git/ && git clone https://github.com/entermedia-community/entermedia-phpclient.git
 RUN echo "export PATH=~/.local/bin:$PATH" >> ~/.bashrc
 ENV LC_ALL en_US.UTF-8
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US.UTF-8
+ADD ./bash/.bashrc /root/.bashrc
 ADD ./scripts/drupal-sshd.sh /usr/bin/drupal-sshd.sh
 ADD ./scripts/drupal-deploy.sh /usr/bin/drupal-deploy.sh
 CMD /usr/sbin/apache2ctl -D FOREGROUND

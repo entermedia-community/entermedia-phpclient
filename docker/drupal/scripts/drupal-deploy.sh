@@ -14,6 +14,8 @@ if [ ! -f /media/services/startup.sh ]; then
 	chmod +x /media/services/startup.sh
 fi
 
+cp /root/.bashrc /home/entermedia/ && chown entermedia. /home/entermedia/.bashrc
+
 # Execute arbitrary scripts if provided
 if [[ -d /media/services ]]; then
   chown entermedia. /media/services
