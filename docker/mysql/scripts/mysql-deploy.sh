@@ -8,14 +8,13 @@ fi
 EM_USER=$1
 PASSWORD=$2
 
-sed -i -e 's/EMUSER/'$EM_USER'/g' /var/lib/mysql/user.sql
-sed -i -e 's/EMPASSWORD/'$PASSWORD'/g' /var/lib/mysql/user.sql
+sed -i -e 's/EMUSER/'$EM_USER'/g' /tmp/user.sql
+sed -i -e 's/EMPASSWORD/'$PASSWORD'/g' /tmp/user.sql
 
 #Run command
 echo Starting MySQL ...
-bash /sbin/my_init
 
-mysql -u root -psupersecret < /var/lib/mysql/user.sql
+mysql -u root -psupersecret < /tmp/user.sql
 # while true
 # do
 #   tail -f /var/log/apache2/access.log
