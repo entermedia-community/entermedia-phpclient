@@ -8,6 +8,17 @@ fi
 EM_USER=$1
 PASSWORD=$2
 
+if [ ! -d /media/services ]; then
+	mkdir /media/services
+fi
+
+
+if [ ! -f /media/services/startup.sh ]; then
+	wget -O /media/services/startup.sh https://raw.githubusercontent.com/entermedia-community/entermedia-phpclient/master/docker/mysql/scripts/startup.sh
+	chmod +x /media/services/startup.sh
+fi
+
+
 sed -i -e 's/EMUSER/'$EM_USER'/g' /tmp/user.sql
 sed -i -e 's/EMPASSWORD/'$PASSWORD'/g' /tmp/user.sql
 
