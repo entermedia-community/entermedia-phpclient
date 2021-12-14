@@ -1,6 +1,6 @@
 {
- "application_host": "https://em9dev.entermediadb.org",
- "application_path": "assets/mediadb",
+ "application_host": "https://em10.entermediadb.org",
+ "application_path": "unittest/mediadb",
  "account": "Administrator",
  "client_id": "admin",
  "client_secret": "admin",

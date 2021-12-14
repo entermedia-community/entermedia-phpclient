@@ -50,7 +50,7 @@ class CMS extends API {
    * @return Asset $asset
    */
   public function getAsset($asset_id) {
-    return $this->cmsRequest('GET', "/openinstitute/mediadb/services/module/asset/search", Asset::class);
+    return $this->cmsRequest('GET', "/services/module/asset/search", Asset::class);
   }
 
   /**

@@ -18,19 +18,19 @@ class Test extends TestBase {
   }
 
   public function testSearchAssetsById() {
-    $filters = $this->getFilters('AWZV77X0sH-lWt2VlIzE');
-    $found_assets = $this->cms->listAssets($filters);
-    print_r ($found_assets);
-    $this->assertTrue((bool) $found_assets, "Results not found");
-  }
-/*
-  public function testSearchAssetsByName() {
-    $filters = $this->getFilters('night','name');
+    $filters = $this->getFilters('AXXnGKpK8GsidWiEcA9l');
     $found_assets = $this->cms->listAssets($filters);
     print_r ($found_assets);
     $this->assertTrue((bool) $found_assets, "Results not found");
   }
 
+  public function testSearchAssetsByName() {
+    $filters = $this->getFilters('dog','name');
+    $found_assets = $this->cms->listAssets($filters);
+    print_r ($found_assets);
+    $this->assertTrue((bool) $found_assets, "Results not found");
+  }
+/*
   public function testSearchAssetsByKeyword() {
     $filters = $this->getFilters('bird','keywords');
     $found_assets = $this->cms->listAssets($filters);
