@@ -260,7 +260,7 @@ class Client {
     $total_requests = 0;
 
     do {
-      list($code, $res) = self::HTTPRequest('POST',
+      list($code, $res) = self::HTTPRequest($method,
         $this->application_url.$endpoint,
         ["Cookie: entermedia.key={$this->access_token}"], $body);
     }
@@ -277,7 +277,7 @@ class Client {
 
     $json = json_decode($res, TRUE);
 
-    // print_r($result);
+    //print_r($result);
     if (is_null($result)) {
       return $json;
     }
