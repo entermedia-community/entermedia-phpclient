@@ -1,4 +1,4 @@
-# PHP Wrapper for the EnterMedia API
+# PHP Wrapper for the EnterMediaDB API
 # PHPunit
 
 
@@ -21,3 +21,6 @@
 
 # Config file: test/config.json
 # Test scripts at: test/EnterMedia/Test/Test.php
+
+# Update Asset:
+# test/EnterMedia/Test/TestUpdate.php - takes an array of fields to update, requires the asset_id

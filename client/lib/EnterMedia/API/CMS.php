@@ -58,9 +58,14 @@ class CMS extends API {
    *
    * @return Asset $asset
    */
-  public function updateAsset(Asset $asset) {
-    // not implemented
-    return null;
+  public function updateAsset($asset_id, $fields = []) {
+
+    $fields["id"] = $asset_id;
+    $post_data = json_encode($fields);
+    print_r($post_data);
+    // /unittest/mediadb/services/module/asset/data/
+    return $this->cmsRequest('PUT', "/services/module/asset/data/index.html", Asset::class, FALSE, $post_data);
+
   }
 
 
