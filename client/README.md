@@ -1,15 +1,23 @@
 # PHP Wrapper for the EnterMedia API
+# PHPunit
 
-## Installation notes
 
-This library requires PHP 7.1 or newer with a CURL extension. You have to run `composer install` before using the library.
+## Installation
+## This library requires PHP 7.1 or newer with a CURL extension.
 
-    # apt-get install php7 php7-curl curl
+    # apt-get install php7 php-curl php-mbstring php-xml
+    # apt-get install curl
 
-    entermedia-phpclient$ curl -sS https://getcomposer.org/installer | php
+## Run `composer update` then `composer install`.
 
-    entermedia-phpclient$ php composer.phar install
+    ## alternative composer.phar
+    # entermedia-phpclient$ curl -sS https://getcomposer.org/installer | php
+    # entermedia-phpclient$ php composer.phar install
 
-## Testing notes
+## Testing
+# Make sure to run `composer update` after any change in libraries.
 
-# Make sure to run `composer update`, then run `runTest.sh`.
+# Run `runTest.sh`.
+
+# Config file: test/config.json
+# Test scripts at: test/EnterMedia/Test/Test.php
